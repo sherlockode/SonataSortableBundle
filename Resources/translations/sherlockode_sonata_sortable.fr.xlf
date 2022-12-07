@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="action_not_allowed">
+                <source>You are not authorized to perform this action</source>
+                <target>Vous n'êtes pas autorisé à d'effectuer cette action</target>
+            </trans-unit>
+            <trans-unit id="move_down">
+                <source>Move down</source>
+                <target>Déplacer à la position suivante</target>
+            </trans-unit>
+            <trans-unit id="move_to_first_position">
+                <source>Move to first position</source>
+                <target>Déplacer à la première position</target>
+            </trans-unit>
+            <trans-unit id="move_to_last_position">
+                <source>Move to last position</source>
+                <target>Déplacer à la dernière position</target>
+            </trans-unit>
+            <trans-unit id="move_up">
+                <source>Move up</source>
+                <target>Déplacer à la position précédente</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,23 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    # Controller
+    Sherlockode\SonataSortableBundle\Controller\SortableController:
+        tags: ['controller.service_arguments']
+        arguments:
+            $sortableManager: '@sherlockode.sonata_sortable.sortable_manager'
+
+    # Manager
+    sherlockode.sonata_sortable.sortable_manager:
+        class: Sherlockode\SonataSortableBundle\Manager\SortableManager
+        arguments:
+            $em: '@doctrine.orm.entity_manager'
+
+    # Twig extension
+    Sherlockode\SonataSortableBundle\Twig\SortableExtension:
+        tags: ['twig.extension']
+    Sherlockode\SonataSortableBundle\Twig\SortableRuntime:
+        arguments:
+            $sortableManager: '@sherlockode.sonata_sortable.sortable_manager'

@@ -1,0 +1,7 @@
+sherlockode_sonata_sortable_move_item:
+    path: /{id}/move/{direction}
+    controller: Sherlockode\SonataSortableBundle\Controller\SortableController::move
+    methods: GET
+    requirements:
+        id: '\d+'
+        direction: up|down|top|bottom
