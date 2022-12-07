@@ -1,0 +1,26 @@
+{% trans_default_domain 'sherlockode_sonata_sortable' %}
+
+{% if admin.isGranted('EDIT', object) and admin.hasRoute('edit') %}
+    {% set current_position = object.position %}
+    {% set first_position   = first_object_position(object, 'position') %}
+    {% set last_position    = last_object_position(object, 'position') %}
+    {% set enable_top_bottom_buttons = field_description.options.actions.move.enable_top_bottom_buttons ?? true %}
+
+    {% if current_position < last_position %}
+        <a class="btn btn-sm btn-default" href="{{ admin.generateObjectUrl('move', object, {'direction': 'bottom'}) }}" title="{{ 'Move to last position'|trans }}">
+            <i class="fa fa-angle-double-down"></i>
+        </a>
+        <a class="btn btn-sm btn-default" href="{{ admin.generateObjectUrl('move', object, {'direction': 'down'}) }}" title="{{ 'Move down'|trans }}">
+            <i class="fa fa-angle-down"></i>
+        </a>
+    {% endif %}
+
+    {% if current_position > first_position %}
+        <a class="btn btn-sm btn-default" href="{{ admin.generateObjectUrl('move', object, {'direction': 'up'}) }}" title="{{ 'Move up'|trans }}">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <a class="btn btn-sm btn-default" href="{{ admin.generateObjectUrl('move', object, {'direction': 'top'}) }}" title="{{ 'Move to first position'|trans }}">
+            <i class="fa fa-angle-double-up"></i>
+        </a>
+    {% endif %}
+{% endif %}
