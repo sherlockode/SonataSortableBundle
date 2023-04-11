@@ -37,9 +37,7 @@ class SortableController extends CRUDController
         }
 
         $object = $this->admin->getSubject();
-        $newPosition = $this->sortableManager->getPosition($object, 'position', $direction);
-        $object->setPosition($newPosition);
-
+        $this->sortableManager->setPosition($object, 'position', $direction);
         $this->admin->update($object);
 
         return new RedirectResponse($this->admin->generateUrl(
